@@ -20,6 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
     )
 
+# rvc-tts-webui
 def rvctts(args: dict):
     args.setdefault('speed', 0)
     args.setdefault('tts_voice', 'ja-JP-NanamiNeural-Female')
@@ -42,6 +43,7 @@ def rvctts(args: dict):
         fn_index=0)
     return res
 
+# rvc
 def change_voice(args: dict):
     url = f"http://127.0.0.1:{args['port']}/"
     grc = gradio_client.Client(url)
@@ -53,6 +55,7 @@ def change_voice(args: dict):
         api_name='/infer_change_voice')
     return res
 
+# rvc
 def infer_convert(args: dict):
     url = f"http://127.0.0.1:{args['port']}/"
     grc = gradio_client.Client(url)
